@@ -1,0 +1,65 @@
+
+Hausa_dict = {
+    "hello": "sannu",
+    "thank you": "na gode",
+    "water": "ruwa",
+    "house": "gida",
+    "food": "abinci",
+    "come": "zo",
+    "go": "je",
+    "good": "mai kyau",
+    "book": "littafi",
+    "money": "kudi",
+    "father": "uba",
+    "mother": "uwa",
+    "child": "yaro",
+    "market": "kasuwa",
+    "road": "hanya",
+    "friend": "aboki",
+    "sun": "rana",
+    "moon": "wata",
+    "star": "tauraro",
+    "day": "rana"
+}
+
+language_map = {
+    "hausa": Hausa_dict,
+    
+}
+
+
+
+def nigerian_translator():
+
+    print("==============================================")
+    print("translator")
+    print("==============================================")
+
+    while True:
+        print("\nhausa  ")
+        choice = input("Enter your language choice: ").strip().lower()
+
+        if choice == 'quit':
+            print("\nThank you for using the our Translator")
+            break
+
+        if choice in language_map:
+            selected_dict = language_map[choice]
+            print(f"\nYou have selected ---{choice.capitalize()}---.")
+            
+            english_word = input("Enter the English word to translate: ").strip().lower()
+
+            if english_word in selected_dict:
+                translation = selected_dict[english_word]
+                print(f"\n----------------------------------------------")
+                print(f" English: **{english_word.capitalize()}**")
+                print(f"{choice.capitalize()}: **{translation}**")
+                print(f"----------------------------------------------")
+            else:
+                print(f"\nSorry, the word **'{english_word}'** is not in the {choice.capitalize()} vocabulary.")
+                print(f"Please try one of the following words: {', '.join(selected_dict.keys())}")
+
+        else:
+            print(f"\nInvalid language choice: '{choice}'. Please select from the list above.")
+
+nigerian_translator()
