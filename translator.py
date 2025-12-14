@@ -40,7 +40,7 @@ yoruba_dictionary = {
     "love": "ìfẹ́",
     "friend": "ọ̀rẹ́",
     "come": "wá",
-    "go": "lọ"
+    "go": "lọ",
     "book": "ìwé",
     "money": "owó"
 }
@@ -68,21 +68,45 @@ igala_dictionary = {
     "money": "óchí"
 }
 
+fulani_dictionary = {
+    "hello": "no seenaa / a yawtii? (greeting/have you passed by?)",
+    "how are you": "a jam-wolii? / no mbii'e?",
+    "i am fine": "jam-wolii (I am well)",
+    "thank you": "a jaaraama",
+    "welcome": "sammba / a he'uɓɓe",
+    "person": "gikku",
+    "man": "gorko",
+    "woman": "debbo",
+    "child": "ɓiɗɗo",
+    "father": "baaba",
+    "eat": "nyaamde",
+    "drink": "yarde",
+    "come": "waru",
+    "go": "yahu",
+    "sleep": "ɗaanaade",
+    "water": "ndiyam",
+    "house": "saare / galle",
+    "food": "nyaamdu",
+    "hand": "junngo",
+    "money": "ceede"
+}
 
 language = {
     "hausa": Hausa_dictionary,
     "yoruba": yoruba_dictionary,
     "igala": igala_dictionary,
+    "fulani": fulani_dictionary,
+    
 }
 
 
 
-def language_translgiator():
+def language():
 
     print("translator")
 
     while True:
-        print("\nhausa \nyoruba ")
+        print("\nhausa \nyoruba \nigala \nfulani")
         choice = input("Enter your language choice: ").strip().lower()
 
         if choice == 'quit':
@@ -108,4 +132,4 @@ def language_translgiator():
         else:
             print(f"\nInvalid language choice: '{choice}'. Please select from the list above.")
 
-language_translator()
+language()
