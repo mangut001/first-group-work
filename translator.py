@@ -1,5 +1,5 @@
 
-Hausa_dict = {
+Hausa_dictionary = {
     "hello": "sannu",
     "thank you": "na gode",
     "water": "ruwa",
@@ -45,18 +45,16 @@ yoruba_dictionary = {
     "money": "owó"
 }
 
-language_map = {
-    "hausa": Hausa_dict,
-    "yoruba": yoruba_dict,
+language = {
+    "hausa": Hausa_dictionary,
+    "yoruba": yoruba_dictionary,
 }
 
 
 
-def nigerian_translator():
+def language_translator():
 
-    print("==============================================")
     print("translator")
-    print("==============================================")
 
     while True:
         print("\nhausa \nyoruba ")
@@ -66,23 +64,23 @@ def nigerian_translator():
             print("\nThank you for using the our Translator")
             break
 
-        if choice in language_map:
-            selected_dict = language_map[choice]
+        if choice in language:
+            selected_dictionary = language[choice]
             print(f"\nYou have selected ---{choice.capitalize()}---.")
             
             english_word = input("Enter the English word to translate: ").strip().lower()
 
-            if english_word in selected_dict:
-                translation = selected_dict[english_word]
-                print(f"\n----------------------------------------------")
-                print(f" English: **{english_word.capitalize()}**")
-                print(f"{choice.capitalize()}: **{translation}**")
-                print(f"----------------------------------------------")
+            if english_word in selected_dictionary:
+                translation = selected_dictionary[english_word]
+                
+                print(f" English: {english_word.capitalize()}")
+                print(f"{choice.capitalize()}: {translation}")
+                
             else:
                 print(f"\nSorry, the word **'{english_word}'** is not in the {choice.capitalize()} vocabulary.")
-                print(f"Please try one of the following words: {', '.join(selected_dict.keys())}")
+                print(f"Please try one of the following words: {', '.join(selected_dictionary.keys())}")
 
         else:
             print(f"\nInvalid language choice: '{choice}'. Please select from the list above.")
 
-nigerian_translator()
+language_translator()
