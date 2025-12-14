@@ -77,7 +77,7 @@ language = {
 
 
 
-def language_translator():
+def language_translgiator():
 
     print("translator")
 
