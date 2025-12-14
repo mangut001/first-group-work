@@ -22,9 +22,32 @@ Hausa_dict = {
     "day": "rana"
 }
 
+yoruba_dictionary = {
+    "hello": "ẹ̀ kaasan",
+    "good morning": "ẹ̀ kaárọ̀",
+    "thank you": "ẹ jẹ́jú",
+    "please": "jọ̀wọ́",
+    "yes": "bẹ́ẹ̀ni",
+    "no": "rárá",
+    "water": "omi",
+    "sun": "òòrùn",
+    "moon": "òṣùpá",
+    "house": "ilé",
+    "food": "oúnjẹ",
+    "man": "ọkùnrin",
+    "woman": "obìnrin",
+    "child": "ọmọ",
+    "love": "ìfẹ́",
+    "friend": "ọ̀rẹ́",
+    "come": "wá",
+    "go": "lọ",
+    "book": "ìwé",
+    "money": "owó"
+}
+
 language_map = {
     "hausa": Hausa_dict,
-    
+    "yoruba": yoruba_dict,
 }
 
 
@@ -36,7 +59,7 @@ def nigerian_translator():
     print("==============================================")
 
     while True:
-        print("\nhausa  ")
+        print("\nhausa \nyoruba ")
         choice = input("Enter your language choice: ").strip().lower()
 
         if choice == 'quit':
