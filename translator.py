@@ -40,14 +40,39 @@ yoruba_dictionary = {
     "love": "ìfẹ́",
     "friend": "ọ̀rẹ́",
     "come": "wá",
-    "go": "lọ",
+    "go": "lọ"
     "book": "ìwé",
     "money": "owó"
 }
 
+igala_dictionary = {
+    "hello": "kóo",
+    "how are you": "chí là?",
+    "i am fine": "mé jé gá", 
+    "thank you": "àhì",
+    "welcome": "gbàwó",
+    "person": "ónú",
+    "man": "ókùnrin",
+    "woman": "ónògbá",
+    "child": "ómí",
+    "father": "àbà",
+    "eat": "jé",
+    "drink": "myí",
+    "come": "wá",
+    "go": "lo",
+    "sleep": "wó",
+    "water": "ómí",
+    "house": "ulé",
+    "food": "òúnjé",
+    "hand": "òwó",
+    "money": "óchí"
+}
+
+
 language = {
     "hausa": Hausa_dictionary,
     "yoruba": yoruba_dictionary,
+    "igala": igala_dictionary,
 }
 
 
