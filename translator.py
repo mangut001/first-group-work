@@ -91,11 +91,35 @@ fulani_dictionary = {
     "money": "ceede"
 }
 
+igbo_dictionary = {
+    "Hello": "Ndewo"
+    "Goodbye":  "Ndo"
+    "Thank you":  "Daalụ" 
+    "Please":    "Biko"       
+    "Yes":        "Ee"
+    "No":     "Mba"        
+    "Water":   "Mmiri"      
+    "Food":   "Nri"        
+    "House":    "Ụlọ"        
+    "Friend":      "Enyi"
+    "Family":     "Ezinụlọ"
+    "Sun":   "Anyanwụ"
+    "Moon":      "Ọnwa"       
+    "Earth":    "Ụwa'"        
+    "Sky":    "Eluigwe"    
+    "Love":        "Ịhụnanya"
+    "Happy":   "Obi ụtọ"
+    "Sad":        "Mwute"      
+    "Good":        "Ọma"
+    "Bad":    "Ọjọọ"
+}
+
 language = {
     "hausa": Hausa_dictionary,
     "yoruba": yoruba_dictionary,
     "igala": igala_dictionary,
     "fulani": fulani_dictionary,
+    "igbo": igbo_dictionary,
     
 }
 
@@ -106,7 +130,7 @@ def language():
     print("translator")
 
     while True:
-        print("\nhausa \nyoruba \nigala \nfulani")
+        print("\nhausa \nyoruba \nigala \nfulani \nigbo")
         choice = input("Enter your language choice: ").strip().lower()
 
         if choice == 'quit':
