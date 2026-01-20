@@ -1,3 +1,5 @@
+import streamlit as st
+
 
 Hausa_dictionary = {
     "hello": "sannu",
@@ -92,68 +94,51 @@ fulani_dictionary = {
 }
 
 igbo_dictionary = {
-    "Hello": "Ndewo"
-    "Goodbye":  "Ndo"
-    "Thank you":  "Daalụ" 
-    "Please":    "Biko"       
-    "Yes":        "Ee"
-    "No":     "Mba"        
-    "Water":   "Mmiri"      
-    "Food":   "Nri"        
-    "House":    "Ụlọ"        
-    "Friend":      "Enyi"
-    "Family":     "Ezinụlọ"
-    "Sun":   "Anyanwụ"
-    "Moon":      "Ọnwa"       
-    "Earth":    "Ụwa'"        
-    "Sky":    "Eluigwe"    
-    "Love":        "Ịhụnanya"
-    "Happy":   "Obi ụtọ"
-    "Sad":        "Mwute"      
-    "Good":        "Ọma"
-    "Bad":    "Ọjọọ"
+    "hello": "Ndewo",
+    "goodbye":  "Ndo",
+    "thank you":  "Daalụ", 
+    "please":    "Biko",       
+    "yes":        "Ee",
+    "no":     "Mba",        
+    "water":   "Mmiri",      
+    "food":   "Nri",        
+    "house":    "Ụlọ",        
+    "friend":      "Enyi",
+    "family":     "Ezinụlọ",
+    "sun":   "Anyanwụ",
+    "moon":      "Ọnwa",       
+    "earth":    "Ụwa'",        
+    "sky":    "Eluigwe",    
+    "love":        "Ịhụnanya",
+    "happy":   "Obi ụtọ",
+    "sad":        "Mwute",      
+    "good":        "Ọma",
+    "bad":    "Ọjọọ"
 }
 
-language = {
+
+st.title("Translator")
+
+lang_data = {
     "hausa": Hausa_dictionary,
     "yoruba": yoruba_dictionary,
     "igala": igala_dictionary,
     "fulani": fulani_dictionary,
     "igbo": igbo_dictionary,
-    
 }
 
+choice = st.selectbox("Select Language", ["hausa", "yoruba", "igala", "fulani", "igbo"])
 
+english_word = st.text_input("Enter the English word to translate:").strip().lower()
 
-def language():
-
-    print("translator")
-
-    while True:
-        print("\nhausa \nyoruba \nigala \nfulani \nigbo")
-        choice = input("Enter your language choice: ").strip().lower()
-
-        if choice == 'quit':
-            print("\nThank you for using the our Translator")
-            break
-
-        if choice in language:
-            selected_dictionary = language[choice]
-            print(f"\nYou have selected ---{choice.capitalize()}---.")
-            
-            english_word = input("Enter the English word to translate: ").strip().lower()
-
-            if english_word in selected_dictionary:
-                translation = selected_dictionary[english_word]
-                
-                print(f" English: {english_word.capitalize()}")
-                print(f"{choice.capitalize()}: {translation}")
-                
-            else:
-                print(f"\nSorry, the word **'{english_word}'** is not in the {choice.capitalize()} vocabulary.")
-                print(f"Please try one of the following words: {', '.join(selected_dictionary.keys())}")
-
+if st.button("Translate"):
+    if choice in lang_data:
+        selected_dictionary = lang_data[choice]
+        
+        if english_word in selected_dictionary:
+            translation = selected_dictionary[english_word]
+            st.success(f"**English:** {english_word.capitalize()}")
+            st.success(f"**{choice.capitalize()}:** {translation}")
         else:
-            print(f"\nInvalid language choice: '{choice}'. Please select from the list above.")
-
-language()
+            st.error(f"Sorry, the word '{english_word}' is not in the {choice.capitalize()} vocabulary.")
+            st.write(f"Please try: {', '.join(selected_dictionary.keys())}")
